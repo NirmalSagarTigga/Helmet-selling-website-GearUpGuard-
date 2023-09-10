@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offroad</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body id="product-fullface">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/GEAR-removebg-preview.png"height="80px"width="100%"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Gear Up Guard</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="log.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                       
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <header id="homeheader">
+            <h6 class="logo"><img src="images/brand2-removebg-preview.png"
+                    style="height: 110px;margin-top:-30px;width: 100%;"></h6>
+            <nav class="navigation">
+                <img src="images/GEAR-removebg-preview.png" id="gearup"
+                    style="height: 110px;margin-top:-30px;position: relative;left: -140px;">
+
+
+
+                <a href="home.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+
+
+                <a href="contact.html">CONTACT US</a>
+
+                <a href="log.html"><button class="button-login-popup">LOGIN</button></a>
+            </nav>
+        </header>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row" style="margin-top:140px;">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a
+                                    href="offroadhelmets.html">Offroad</a></li>
+                        </ol>
+                    </nav>
+
+                    <hr>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="dropdown">
+                        <label for="drop">Category: </label>
+                        <button class="btn btn-secondary dropdown-toggle" id="drop" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            ALL
+                        </button>
+
+                        <label for="sort">Sort by: </label>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fullface.html">fullface Helmets</a></li>
+                            <li><a class="dropdown-item" href="offroadhelmets.html">Offroad Helmets</a></li>
+                            <li><a class="dropdown-item" href="#">Openface Helmets</a></li>
+                            <li><a class="dropdown-item" href="#">Accessories Helmets</a></li>
+                        </ul>
+                        <button class="btn btn-secondary dropdown-toggle" id="sort" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Filter
+                        </button>
+
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Default</a></li>
+                            <li><a class="dropdown-item" href="#">Price(low>high)</a></li>
+                            <li><a class="dropdown-item" href="#">Price(high>low)</a></li>
+                            <li><a class="dropdown-item" href="#">Rating(low>high)</a></li>
+                            <li><a class="dropdown-item" href="#">Rating(high>low)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container helm">
+            <div class="item1">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image">
+                            <a href="#">
+                                <img src="images/offroad/or1.png" alt="APEX TIKI" title="APEX TIKI"
+                                    class="img-responsive 2"></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <p class="catspan1"><span class="sp1">APEX MARVEL VENOM</span><br><span class="sp2">DULL BLACK
+                            RED</span>
+
+                    </p>
+
+                    <div class="clearfix"></div>
+                    <p class="price catspan2">
+                        Rs.4000
+                    </p>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            </a>
+            <div class="item2">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image">
+                        <a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image">
+                            <a href="#"></a>
+                            <a href="#">
+                                <img src="images/offroad/or2.png" alt="APEX TIKI" title="APEX TIKI"
+                                    class="img-responsive 2"></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <p class="catspan1"><span class="sp1">APEX TIKI</span><br><span class="sp2">BLACK NEON YELLOW</span>
+
+                    </p>
+
+                    <div class="clearfix"></div>
+                    <p class="price catspan2">
+                        Rs.4,400
+                    </p>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="item3">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image">
+                        <a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image">
+                            <a href="#"></a>
+                            <a href="#">
+                                <img src="images/offroad/or3.png" alt="APEX TIKI" title="APEX TIKI"
+                                    class="img-responsive 3"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">STREET BOBBY</span><br><span class="sp2">BLACK RED</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.3,200
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+
+            <div class="item4">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or4.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 4"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <p class="catspan1"><span class="sp1">STREET DC BATMAN</span><br><span class="sp2">DULL BLACK RED</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.4,994
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+
+            <div class="item5">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or5.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 5"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">STREET ZAZU</span><br><span class="sp2">BLACK RED</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.4,900
+                </p>
+                <div class="clearfix"></div>
+
+
+            </div>
+
+
+            <div class="item6">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image">
+                        <a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or6.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 6"></a></div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">X-CROSS</span><br><span class="sp2">NICKEL RED</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.3,800
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="item7">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or7.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 7"></a></div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">X-CROSS DUAL VISOR SC</span><br><span class="sp2">DULL BLACK
+                        ORANGE</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.6,700
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="item8">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or8.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 8"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">xBhp theNineteen
+                    </span><br><span class="sp2">BLUE RED</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.4,994
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="item9">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or5.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 9"></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="catspan1"><span class="sp1">APEX CARBON BIG CHECKS</span><br><span class="sp2">GLOSS CARBON
+                        NEON YELLOW</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.4,100
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="item10">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or6.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 10"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">APEX CHROMETECH</span><br><span class="sp2">BLACK BLUE</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.5,500
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="item11">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or1.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 11"></a></div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">APEX JOKER</span><br><span class="sp2">SPECIAL EDITION</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.4,600
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+            <div class="item12">
+                <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
+                    <a href="#">
+
+                    </a>
+                    <div class="prod-image"><a href="#">
+                            <!--<img class="prodimg1" src="images/fullface-1.png">-->
+                        </a>
+                        <div class="image"><a href="#"></a><a href="#"><img src="images/offroad/or8.png" alt="APEX TIKI"
+                                    title="APEX TIKI" class="img-responsive 12"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="catspan1"><span class="sp1">APEX HUNTER D/V</span><br><span class="sp2">BLACK PINK</span>
+
+                </p>
+
+                <div class="clearfix"></div>
+                <p class="price catspan2">
+                    Rs.4,994
+                </p>
+                <div class="clearfix"></div>
+
+            </div>
+
+
+        </div>
+        <section id="footer">
+            <div class="container">
+                <div class="row text-center text-xs-center text-sm-left text-md-left">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a>
+                            </li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a>
+                            </li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a>
+                            </li>
+                            <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i
+                                        class="fa fa-angle-double-right"></i>Imprint</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i
+                                        class="fa fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i
+                                        class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i
+                                        class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                    </hr>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                        <p><u><a href="https://www.nationaltransaction.com/">Slacker Helmets</a></u> is
+                            a
+                            Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp,
+                            Minneapolis, MN]</p>
+                        <p class="h6">&copy All right Reversed.<a class="text-green ml-2"
+                                href="https://www.sunlimetech.com" target="_blank">Slacker Helmets</a></p>
+                    </div>
+                    </hr>
+                </div>
+            </div>
+        </section>
+
+
+
+</body>
+
+</html>
