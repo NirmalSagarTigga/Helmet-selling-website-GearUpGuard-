@@ -4,7 +4,7 @@
     {% load  static %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Beautiful Bootstrap Navbar with Menu Icons</title>
+    <title>user list</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -15,15 +15,18 @@
   </head>
 
   <body>
+    {% include 'messages.html'%}
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">count</th>
+         
+          <th scope="col">serial</th>
           <th scope="col">First</th>
           <th scope="col">Last</th>
           <th scope="col">Handle</th>
           <th scope="col">Handle</th>
           <th scope="col">phone</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -36,9 +39,11 @@
           <td>{{i.email}}</td>
           <td>{{i.password}}</td>
           <td>{{i.Phone}}</td>
+          <td><a href="{% url 'del_user' i.id %}" class="btn btn-sm bg-danger text-white">Delete</a></td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
+    <script src="{% static 'js/messages.js' %}"></script>
   </body>
 </html>

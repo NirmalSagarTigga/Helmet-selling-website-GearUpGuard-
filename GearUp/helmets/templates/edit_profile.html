@@ -37,8 +37,6 @@
 
 
 <body>
-    <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
         <div class="container-xl px-4 mt-4">
             <hr class="mt-0 mb-4">
             <div class="row">
@@ -61,11 +59,13 @@
                     <div class="card mb-4">
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
-                            <form>
+                            <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
                                 <!-- Form Group (username)-->
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                    <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                                    <input class="form-control" name="username" placeholder="Enter a username" value="{{profile.username}}">
                                 </div>
                                 <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
@@ -96,7 +96,7 @@
                                 <!-- Form Group (email address)-->
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                    <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                                    <input class="form-control" name="email" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="{{profile.email}}">
                                 </div>
                                 <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button">Save changes</button>
+                                <button class="btn btn-primary" type="submit">Save changes</button>
                             </form>
                         </div>
                     </div>

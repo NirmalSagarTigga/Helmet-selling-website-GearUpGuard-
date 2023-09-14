@@ -61,19 +61,29 @@ def edit_profile(request):
     if 'user_id' in request.session:
         if request.method == "POST":
             username = request.POST['username'] 
-            password = request.POST['password']
+            # password = request.POST['password']
+            email = request.POST['email']
             data = Customer.objects.get(id=request.session['user_id'])
-            data={'username':username}
-            data={'password':password}
+            if username!="":
+                data.username=username
+            if email!="":
+                data.email=email
+
             data.save()
-            messages.add_message(request, messages.success,"profile update sucessfully") 
+            # messages.add_message(request, messages.success,"profile update sucessfully") 
             return redirect('profile')
         else:
             profile = Customer.objects.get(id=request.session['user_id'])
-            data = {'profile':profile, 'title':edit_profile}
+            data = {'profile':profile, 'title':'edit_profile'}
             return render(request, 'edit_profile.html', data)
     else:
         return redirect('login')
+
+def del_user(request,id):
+    check=Customer.objects.get(id=id)
+    check.delete()
+    messages.add_message(request,messages.SUCCESS,"user deleted")
+    return redirect('table')
 
 
 

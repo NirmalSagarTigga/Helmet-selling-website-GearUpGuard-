@@ -1,0 +1,15 @@
+{% if messages %}
+{% for msg in messages %}
+{% if msg.tags == 'error' %}
+<div class="alert alert-danger bg-danger text-white btn_remove" role="alert">
+    {{ msg.message }}
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+</div>
+{% else %}
+<div class="alert alert-success bg-success text-white btn_remove" role="alert">
+    {{ msg.message }}
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
