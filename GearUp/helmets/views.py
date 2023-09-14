@@ -7,19 +7,17 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import *
 
-def header(request):
-    return(request,'header.html')
 def home(request):
     return render(request,'home.html')
 def fullface(request):
     return render(request,'fullface.html')
 def login(request):
     if request.method=="POST":
-        email=request.POST['email'] 
+        username=request.POST['username'] 
         password=request.POST['password']
-        check_user=Customer.objects.filter(email=email,password=password).first()
+        check_user=Customer.objects.filter(username=username,password=password).first()
         if check_user is not None:
-            request.session['email']=email
+            request.session['username']=username
             request.session['user_id']=check_user.id
             return redirect('home')
         else:
@@ -27,7 +25,7 @@ def login(request):
     return render(request,'log.html')
 def logout1(request):
         logout(request)
-        return HttpResponse('-->logged out Successfully Login Again to stay with us<--')
+        return redirect('login')
 def checkout(request):
     return render(request,'checkout.html')
 def register(request):
@@ -44,6 +42,51 @@ def register(request):
             check=Customer.objects.create(fullname=fullname,username=username,email=email,Phone=Phone,password=password,confirm_password=confirm_password)
             return HttpResponse('-->Registration Done Successfully<--')
     return render(request,'register.html')
+
+
+def profile(request):
+    if 'user_id' in request.session:
+        profile_data=Customer.objects.get(id=request.session['user_id'])
+        data={'profile':profile_data}
+        return render(request,'profile.html',data)
+    else:
+        return redirect('login')
+    
+def table(request):
+    user_list=Customer.objects.all()
+    data={'user_list':user_list}
+    return render(request,"table.html",data)
+
+def edit_profile(request):
+    if 'user_id' in request.session:
+        if request.method == "POST":
+            username = request.POST['username'] 
+            password = request.POST['password']
+            data = Customer.objects.get(id=request.session['user_id'])
+            data={'username':username}
+            data={'password':password}
+            data.save()
+            messages.add_message(request, messages.success,"profile update sucessfully") 
+            return redirect('profile')
+        else:
+            profile = Customer.objects.get(id=request.session['user_id'])
+            data = {'profile':profile, 'title':edit_profile}
+            return render(request, 'edit_profile.html', data)
+    else:
+        return redirect('login')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
