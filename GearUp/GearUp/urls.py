@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 from helmets import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('helmets.urls')),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('logout1/',views.logout1,name='logout1'),
     path('profile/',views.profile,name='profile'),
     path('edit_profile/',views.edit_profile,name='edit_profile'),
+    
 ]

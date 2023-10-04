@@ -9,8 +9,10 @@ from .models import *
 
 def home(request):
     return render(request,'home.html')
+
 def fullface(request):
     return render(request,'fullface.html')
+
 def login(request):
     if request.method=="POST":
         username=request.POST['username'] 
@@ -23,11 +25,14 @@ def login(request):
         else:
             return HttpResponse('-->Invalid credentials<--')
     return render(request,'log.html')
+
 def logout1(request):
         logout(request)
         return redirect('login')
+
 def checkout(request):
     return render(request,'checkout.html')
+
 def register(request):
     if request.method=="POST":
         fullname=request.POST['fullname'] 
@@ -85,11 +90,27 @@ def del_user(request,id):
     messages.add_message(request,messages.SUCCESS,"user deleted")
     return redirect('table')
 
+def product(request):
+    product=Product.objects.all()
+    data={'product':product}
+    return render(request,'product.html',data) 
 
 
-
-
-
+def cart(request):
+    if request.method == "POST":
+        if request.session['userid'] != '':
+            pid=request.POST['pid']
+            uid=request.session['userid']
+            Cart.objects.create(product_id=pid,register_id=uid,qnty=1)
+            return redirect('product') 
+        else:
+            cart=Cart.objects.all()
+            data={'cart':cart}
+            return render(request,'cart.html',data) 
+    else:
+        cart=Cart.objects.all()
+        data={'cart':cart}
+        return render(request,'cart.html',data)
 
 
 
