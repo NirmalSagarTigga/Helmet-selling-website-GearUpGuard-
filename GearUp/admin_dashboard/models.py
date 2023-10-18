@@ -2,8 +2,13 @@ from django.db import models
 
 # Create your models here.
 	
+
+
+def _str_(self):
+	return self.title
+
 class Banner(models.Model):
-	image=models.ImageField(upload_to='banner/')
+	image=models.ImageField(upload_to='add_banner/')
 
 class Animation(models.Model):
 	image=models.ImageField(upload_to='Animation/')
