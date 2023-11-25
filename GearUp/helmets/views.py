@@ -8,10 +8,17 @@ from django.contrib import messages
 from .models import *
 
 def home(request):
-    return render(request,'home.html')
+    banner=Banner.objects.all()
+    data={'banner':banner}
+    return render(request,"home.html",data)
 
 def fullface(request):
-    return render(request,'fullface.html')
+    product=Product.objects.all()
+    data={'product':product}
+    return render(request,"fullface.html",data)
+
+def offroad(request):
+    return render(request,'offroadhelmets.html')
 
 def login(request):
     if request.method=="POST":
@@ -21,14 +28,16 @@ def login(request):
         if check_user is not None:
             request.session['username']=username
             request.session['user_id']=check_user.id
+            messages.success(request,'logged in successfully')
             return redirect('home')
         else:
-            return HttpResponse('-->Invalid credentials<--')
+            messages.success(request,'invalid_password')
+            return redirect('login')
     return render(request,'log.html')
 
 def logout1(request):
-        logout(request)
-        return redirect('login')
+    logout(request)
+    return redirect('home')
 
 def checkout(request):
     return render(request,'checkout.html')
@@ -45,9 +54,8 @@ def register(request):
             return HttpResponse("-->Registration not Done Your Password didn't match<--")
         else:
             check=Customer.objects.create(fullname=fullname,username=username,email=email,Phone=Phone,password=password,confirm_password=confirm_password)
-            return HttpResponse('-->Registration Done Successfully<--')
+            messages.success(request,'-->Registration Done Successfully<--')
     return render(request,'register.html')
-
 
 def profile(request):
     if 'user_id' in request.session:
@@ -89,6 +97,8 @@ def del_user(request,id):
     check.delete()
     messages.add_message(request,messages.SUCCESS,"user deleted")
     return redirect('table')
+
+
 
 def product(request):
     product=Product.objects.all()

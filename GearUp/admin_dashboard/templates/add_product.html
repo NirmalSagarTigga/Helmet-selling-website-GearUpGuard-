@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Banner</title>
+    <title>Add Product</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
@@ -38,12 +38,20 @@
           <div class="col-3">
             <div class="card">
               <div class="card-header">
-                <h2>Add Banner</h2>
+                <h2>Add Product</h2>
               </div>
               <div class="card-body">
-                <form method="POST" action="{% url 'add_banner' %}" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
                   {% csrf_token %}
-                  <input type="file" name="bimage" class="form-control"/>
+                
+                  <p>Product name</p>
+                  <input type="text" name="pname"> 
+                  <p>Product color</p>
+                  <input type="text" name="pcolor">
+                  <p>Product price</p>
+                  <input type="number" name='price'>
+                  <p>Product Image</p>
+                  <input type="file" name="image" class="form-control"/>
                   <input type="submit" class="form-control btn btn-sm btn-info mt-3" value="Save">
                 </form>
               </div>
@@ -52,7 +60,7 @@
           <div class="col-9">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Banner List</h3>
+                <h3 class="card-title">Product List</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -61,21 +69,26 @@
                   <tr>
                     <th>#</th>
                     <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Product color</th>
+                    <th>Product Price</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                    {% for i in banner %}
-                    <tr>
+                    {% for i in product %}
+                  <tr>
                     <td>{{forloop.counter}}</td>
-                    <td><img src="{{i.image.url}}" style="width: 300px;height: 100px;"/></td>
+                    <td><img src="{{i.image.url}}" style="width: 30% ;height: 40%;"/></td>
+                    <td>{{i.pname}}</td>
+                    <td>{{i.pcolor}}</td>
+                    <td>{{i.price}}</td>
                     <td>
                       <a class="btn btn-sm btn-primary mr-2 mb-1" href="">Edit</a>
-                      <a href="{% url 'del_banner' i.id %}" class="btn btn-sm btn-danger mr-2 mb-1" href="">Delete</a>
+                      <a href="{% url 'del_product' i.id %}" class="btn btn-sm btn-danger mr-2 mb-1" href="">Delete</a>
                     </td>
-                    </tr>
-                    {% endfor %}
-                  </tbody>
+                  </tr>
+                  {% endfor %}
                 </table>
               </div>
               <!-- /.card-body -->
