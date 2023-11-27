@@ -16,6 +16,7 @@ urlpatterns = [
     path('del_user/<id>',views.del_user,name='del_user'),
     path('product',views.product,name='product'),
 	path('cart',views.cart,name='cart'),
+    path('p_details/<id>',views.p_details,name='p_details'),
    
    
 ]

@@ -22,6 +22,7 @@
 
 <body id="product-fullface">
     {% include "header.html" %}
+    {% include "messages.html" %}
     <section>
         <div class="container">
             <div class="row" style="margin-top:140px;">
@@ -76,14 +77,16 @@
         {% if forloop.counter == 1 %}
         <div class>
             <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
-                <a href="#">
-
-                </a>
+               
+                
+                <a href=""></a>
+                
+               
                 <div class="prod-image"><a href="#">
                         <!--<img class="prodimg1" src="{% static 'images/fullface-1.png">-->
                     </a>
-                    <div class="image"><a href="#"></a><a href="#"><img src="{{ i.image.url }}"
-                                alt="APEX TIKI" title="APEX TIKI" class="img-responsive 12"></a>
+                    <div class="image"><a href="{% url 'p_details' i.id %}"></a> <a href="{% url 'p_details' i.id %}"><img src="{{ i.image.url }}"
+                        alt="APEX TIKI" title="APEX TIKI" class="img-responsive 12"></a>
                     </div>
                 </div>
             </div>
@@ -103,13 +106,14 @@
         {% else %}
         <div class="item12">
             <div class="product-layout product-list col-xs-12 col-sm-3 col-md-3">
-                <a href="#">
-
-                </a>
+               
+                <form>
+                <a href=""></a>
+                </form>
                 <div class="prod-image"><a href="#">
                         <!--<img class="prodimg1" src="{% static 'images/fullface-1.png">-->
                     </a>
-                    <div class="image"><a href="#"></a><a href="#"><img src="{{ i.image.url }}"
+                    <div class="image"><a href="{% url 'p_details' i.id %}"></a><a href="{% url 'p_details' i.id %}"><img src="{{ i.image.url }}"
                                 alt="APEX TIKI" title="APEX TIKI" class="img-responsive 12"></a>
                     </div>
                 </div>

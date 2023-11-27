@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+    {% load static %}
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +11,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout.Page</title>
-
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -47,7 +57,7 @@
     }
 
     #page6 {
-      display: block;
+     
       background-color: white;
     }
 
@@ -124,61 +134,7 @@
 </head>
 
 <body id="page6">
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="images/GEAR-removebg-preview.png" height="80px" width="100%"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Gear Up Guard</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="log.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-
-          </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <section>
-    <header id="homeheader">
-      <h6 class="logo"><img src="images/brand2-removebg-preview.png"
-          style="height: 110px;margin-top:-30px;width: 100%;"></h6>
-      <nav class="navigation">
-        <img src="images/GEAR-removebg-preview.png" id="gearup"
-          style="height: 110px;margin-top:-30px;position: relative;left: -140px;">
-
-
-
-        <a href="home.html">HOME</a>
-        <a href="about.html">ABOUT US</a>
-
-
-        <a href="contact.html">CONTACT US</a>
-
-        <a href="log.html"><button class="button-login-popup">LOGIN</button></a>
-      </nav>
-    </header>
+  <div>{% include "header.html" %}</div>
   </section>
   <div class="row image-sec container">
     <div class="col-sm-5">
@@ -188,31 +144,31 @@
 
 
 
-        <img class="img-fluid" src="images/proddetail/prod1gif.gif " title="APEX MARVEL VENOM" alt="APEX MARVEL VENOM"
+        <img class="img-fluid" src="{% static 'images/proddetail/prod1gif.gif' %} " title="APEX MARVEL VENOM" alt="APEX MARVEL VENOM"
           id="mainimg">
 
       </div>
       <div class="container add-img">
-        <img class="enlargeImg" src="images/proddetail/prod2.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod3.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod4.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod5.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod6.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod7.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod8.jpg" alt="">
-        <img class="enlargeImg" src="images/proddetail/prod9.jpg" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod2.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod3.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod4.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod5.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod6.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod7.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod8.jpg' %}" alt="">
+        <img class="enlargeImg" src="{% static 'images/proddetail/prod9.jpg' %}" alt="">
 
       </div>
     </div>
     <div class="col-sm-7">
-      <h1 id="pname">APEX MARVEL VENOM</h1>
-      <span id="model-color">DULL BLACK RED</span>
+      <h1 id="pname">{{product.pname}}</h1>
+      <span id="model-color">{{product.pcolor}}</span>
       <ul class="list-unstyled">
 
       </ul>
       <ul class="list-unstyled">
         <li>
-          <h2>MRP Rs.4,000</h2>
+          <h2>MRP {{product.price}}</h2>
         </li>
 
 
@@ -286,12 +242,17 @@
           </div>
         </div>
 
-
+          
         <div class="row">
           <div class="col-sm-6 col-md-6">
-            <button type="button" id="button-cart" data-loading-text="Loading..."
+            {% csrf_token %}
+            <form method="POST" action="{% url 'cart' %}">
+              {% csrf_token %}
+            <input type="hidden" name="pid" value="{{product.id}}">
+            <button type="submit" id="button-cart" data-loading-text="Loading..."
               style="border-radius:0px;border-color:#e3000f;color:#fff;background:#e3000f;text-transform:uppercase"
-              class="btn btn-lg btn-block">Add to Cart</button>
+              class="btn btn-lg btn-block">Add to Cart</button></a>
+            </form>
           </div>
           <div class="col-sm-6 col-md-6">
             <button type="button" data-toggle="tooltip" class="btn btn-lg btn-block"

@@ -55,6 +55,7 @@ def register(request):
         else:
             check=Customer.objects.create(fullname=fullname,username=username,email=email,Phone=Phone,password=password,confirm_password=confirm_password)
             messages.success(request,'-->Registration Done Successfully<--')
+            return redirect('login')
     return render(request,'register.html')
 
 def profile(request):
@@ -108,24 +109,28 @@ def product(request):
 
 def cart(request):
     if request.method == "POST":
-        if request.session['userid'] != '':
+        if 'user_id' in request.session:
             pid=request.POST['pid']
-            uid=request.session['userid']
-            Cart.objects.create(product_id=pid,register_id=uid,qnty=1)
-            return redirect('product') 
+            uid=request.session['user_id']
+            Cart.objects.create(product_id=pid,register_id=uid)
+            return redirect('fullface') 
         else:
-            cart=Cart.objects.all()
+            uid=request.session['user_id']
+            cart=Cart.objects.filter(register_id=uid)
             data={'cart':cart}
             return render(request,'cart.html',data) 
     else:
-        cart=Cart.objects.all()
-        data={'cart':cart}
-        return render(request,'cart.html',data)
-
-
-
-
-
+        if 'user_id' in request.session:
+            uid = request.session['user_id']
+            cart=Cart.objects.all()
+            data={'cart':cart}
+            return render(request,'cart.html',data)
+        return redirect('login')
+def p_details(request,id):
+    product=Product.objects.get(id=id)
+    print(product)
+    data={'product':product}
+    return render(request,'productdetail.html',data)
 
 
 

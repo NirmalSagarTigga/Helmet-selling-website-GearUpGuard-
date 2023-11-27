@@ -47,7 +47,6 @@ def del_banner(request,id):
 def del_product(request,id):
     check=Product.objects.get(id=id)
     check.delete()
-    messages.add_message(request,messages.SUCCESS,"Product deleted")
     return redirect('add_product')
 
 
