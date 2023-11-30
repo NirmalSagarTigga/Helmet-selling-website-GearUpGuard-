@@ -6,7 +6,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import *
-
+from django.core.mail import send_mail
+from django.conf import settings
+#home
 def home(request):
     banner=Banner.objects.all()
     data={'banner':banner}
@@ -20,28 +22,7 @@ def fullface(request):
 def offroad(request):
     return render(request,'offroadhelmets.html')
 
-def login(request):
-    if request.method=="POST":
-        username=request.POST['username'] 
-        password=request.POST['password']
-        check_user=Customer.objects.filter(username=username,password=password).first()
-        if check_user is not None:
-            request.session['username']=username
-            request.session['user_id']=check_user.id
-            messages.success(request,'logged in successfully')
-            return redirect('home')
-        else:
-            messages.success(request,'invalid_password')
-            return redirect('login')
-    return render(request,'log.html')
-
-def logout1(request):
-    logout(request)
-    return redirect('home')
-
-def checkout(request):
-    return render(request,'checkout.html')
-
+#register
 def register(request):
     if request.method=="POST":
         fullname=request.POST['fullname'] 
@@ -54,9 +35,33 @@ def register(request):
             return HttpResponse("-->Registration not Done Your Password didn't match<--")
         else:
             check=Customer.objects.create(fullname=fullname,username=username,email=email,Phone=Phone,password=password,confirm_password=confirm_password)
-            messages.success(request,'-->Registration Done Successfully<--')
+            messages.success(request,'-->Registration Successfull<--')
             return redirect('login')
     return render(request,'register.html')
+
+#login
+def login(request):
+    if request.method=="POST":
+        username=request.POST['username'] 
+        password=request.POST['password']
+        check_user=Customer.objects.filter(username=username,password=password).first()
+        if check_user is not None:
+            request.session['username']=username
+            request.session['user_id']=check_user.id
+            return redirect('home')
+        else:
+            messages.success(request,'invalid_password')
+            return redirect('login')
+    return render(request,'log.html')
+
+def logout1(request):
+    del request.session['user_id']
+    del request.session['username']
+    messages.success(request,'logout successfull')
+    return redirect('login')
+
+def checkout(request):
+    return render(request,'checkout.html')
 
 def profile(request):
     if 'user_id' in request.session:
@@ -126,13 +131,46 @@ def cart(request):
             data={'cart':cart}
             return render(request,'cart.html',data)
         return redirect('login')
+    
 def p_details(request,id):
     product=Product.objects.get(id=id)
-    print(product)
     data={'product':product}
     return render(request,'productdetail.html',data)
 
+def del_cartpro(request,id):
+    check=Cart.objects.get(id=id)
+    check.delete()
+    messages.add_message(request,messages.SUCCESS,"product deleted")
+    return redirect('cart')
+
+def checkout(request):
+    cart=Cart.objects.all()
+    data={'cart':cart}
+    return render(request,'checkout.html',data)
 
 
+def placeorder(request):
+    if 'user_id' in request.session:
+        if request.method =='POST':
+            neworder=Order()
+            neworder.fname=request.POST.get('fname')
+            neworder.email=request.POST.get('email')
+            neworder.address=request.POST.get('address')
+            neworder.city=request.POST.get('city')
+            neworder.zip=request.POST.get('zip')
+            neworder.state=request.POST.get('state')
+
+            neworder.payment_mode=request.POST.get('payment_mode')
+            neworder.save() 
+            Cart.objects.all().delete()
+            return redirect('thankyou')
+    
+
+
+    
+def thankyou(request):
+    cart=Cart.objects.all()
+    data={'cart':cart}  
+    return render(request,'thankyou.html',data)
 
 

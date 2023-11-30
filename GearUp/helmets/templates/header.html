@@ -54,9 +54,9 @@
           <img src="{% static 'images/GEAR-removebg-preview.png'%}"id="gearup" style="height: 110px;margin-top:-30px;position: relative;left: -70px;" />
 
           <a href="{% url 'home' %}">HOME</a>
-          <a href="about.html">ABOUT US</a>
+          <a href="">ABOUT US</a>
 
-          <a href="{% url 'table' %}">CONTACT US</a>
+          <a href="">CONTACT US</a>
           <a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"style="font-size:25px"></i></a>
           <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
           {% if 'user_id' in request.session %}

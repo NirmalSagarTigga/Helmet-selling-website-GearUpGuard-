@@ -88,9 +88,12 @@
             </nav>
         </header>
     </section>
+   
     <div class="wrapper">
         <div class="form-box login">
+            {% include 'messages.html' %}
             <h2>Login</h2>
+           
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <div class="input-box">
@@ -118,11 +121,12 @@
             </form>
         </div>
     </div>
+    <script src="{% static 'js/messages.js' %}"></script>
    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    {% include 'messages.html' %}
-
+   
+   
 </body>
 
 

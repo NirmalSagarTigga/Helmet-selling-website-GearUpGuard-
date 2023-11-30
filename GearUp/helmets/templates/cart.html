@@ -86,7 +86,9 @@
       
       /* Apply clearfix in a few places */
       /* Apply dollar signs */
-      .product .product-price:before,
+      .product .product-price:before{
+        content: 'Rs ';
+      }
       .product .product-line-price:before,
       .totals-value:before {
         content: '$';
@@ -275,6 +277,7 @@
   </head>
   <body style="margin-top: 10%;">
     {% include 'header.html' %}
+    {% include 'messages.html' %}
 
     <div class="shopping-cart">
       <div class="column-labels">
@@ -290,13 +293,13 @@
         <div class="product-image">
           <img src="{{i.product.image.url}}">
         </div>
-        <div class="product-name">{{i.product.pname}}</div>
+        <div class="product-details">{{i.product.pname}}</div>
         <div class="product-price">{{i.product.price}}</div>
         <div class="product-quantity">
           <input type="number" value="2" min="1" />
         </div>
         <div class="product-removal">
-          <button class="remove-product">Remove</button>
+          <a href="{% url 'del_cartpro' i.id %}" class="remove-product">Remove</a>
         </div>
       </div>
       {% endfor %}
@@ -320,7 +323,7 @@
         </div>
       </div>
 
-      <button class="checkout">Checkout</button>
+      <a href="{% url 'checkout' %}"class="checkout">Checkout</a>
     </div>
     {% include 'footer.html' %}
    
