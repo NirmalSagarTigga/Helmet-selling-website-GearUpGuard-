@@ -25,7 +25,7 @@ To run this project locally, follow these steps:
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/yourusername/helmet-shop.git
+git clone [https://github.com/yourusername/helmet-shop.git](https://github.com/NirmalSagarTigga/Helmet-selling-website-GearUpGuard-.git)
 cd helmet-shop
 Create and activate a virtual environment:
 
